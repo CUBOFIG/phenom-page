@@ -11,7 +11,7 @@ import { useDispatch } from "react-redux";
 const Hero = () => {
   //const [online, setOnline] = useState(true);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   // const changeCurrenState = (state) => {
   //   dispatch(changeState(state));
