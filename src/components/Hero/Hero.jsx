@@ -6,7 +6,7 @@ import {
 } from "./Hero.elements";
 //import { useState } from "react";
 //import { changeState } from "../../features/live/liveSlices";
-import { useDispatch } from "react-redux";
+//import { useDispatch } from "react-redux";
 
 const Hero = () => {
   //const [online, setOnline] = useState(true);
