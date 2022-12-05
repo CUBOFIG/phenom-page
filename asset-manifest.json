@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/jp-page/static/js/main.07e24526.js",
+    "static/media/jonhy.png": "/jp-page/static/media/jonhy.444ff482302230022b4b.png",
+    "static/media/logo.jpg": "/jp-page/static/media/logo.d686a38a0844d23ce515.jpg",
+    "index.html": "/jp-page/index.html",
+    "main.07e24526.js.map": "/jp-page/static/js/main.07e24526.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.07e24526.js"
+  ]
+}
