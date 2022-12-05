@@ -33,11 +33,11 @@ const Hero = () => {
             hideControls={false}
             width={1000}
             onOnline={() => {
-              //changeCurrenState(true);
+              changeCurrenState(true);
             }}
             onOffline={() => {
               setOnline(false);
-              changeCurrenState(false);
+              changeCurrenState(true);
             }}
           />
         </TwitchPlayerContainer>
