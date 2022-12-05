@@ -2,21 +2,20 @@ import {
   TwitchContainer,
   TwitchPlayerContainer,
   TwitchChatContainer,
-  TwitchPlayer,
   TwitchChat,
 } from "./Hero.elements";
-import { useState } from "react";
-import { changeState } from "../../features/live/liveSlices";
+//import { useState } from "react";
+//import { changeState } from "../../features/live/liveSlices";
 import { useDispatch } from "react-redux";
 
 const Hero = () => {
-  const [online, setOnline] = useState(true);
+  //const [online, setOnline] = useState(true);
 
   const dispatch = useDispatch();
 
-  const changeCurrenState = (state) => {
-    dispatch(changeState(state));
-  };
+  // const changeCurrenState = (state) => {
+  //   dispatch(changeState(state));
+  // };
 
   return (
     <TwitchContainer className="flex">
