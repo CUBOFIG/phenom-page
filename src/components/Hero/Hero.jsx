@@ -26,7 +26,7 @@ const Hero = () => {
         </TwitchChatContainer>
 
         <TwitchPlayerContainer>
-          <TwitchPlayer
+          {/* <TwitchPlayer
             {...(online ? { channel: "jonhyphenom" } : { video: "1668088830" })}
             className="twitch-player"
             parent={["localhost"]}
@@ -39,7 +39,7 @@ const Hero = () => {
               setOnline(false);
               changeCurrenState(false);
             }}
-          />
+          /> */}
         </TwitchPlayerContainer>
       </div>
     </TwitchContainer>
