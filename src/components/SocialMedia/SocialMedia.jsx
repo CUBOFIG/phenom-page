@@ -14,7 +14,7 @@ export const SocialMedia = ({ icon, href }) => {
 
 export const SocialMediaButton = ({ icon, action }) => {
   return (
-    <SocialButton className="a" onClick={() => action()}>
+    <SocialButton className="a" onClick={action}>
       {icon}
     </SocialButton>
   );

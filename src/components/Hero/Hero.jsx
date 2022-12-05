@@ -37,7 +37,7 @@ const Hero = () => {
             }}
             onOffline={() => {
               setOnline(false);
-              changeCurrenState(true);
+              changeCurrenState(false);
             }}
           />
         </TwitchPlayerContainer>

@@ -2,33 +2,33 @@ import React from "react";
 import {
   HeaderContainer,
   HeaderPrincipalElemment,
-  ButtonLive,
-  LiveIcon,
   SocialMediaContainer,
   Logo,
 } from "./Header.elements";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { BsTwitter, BsInstagram, BsTwitch } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { SocialMedia, SocialMediaButton } from "../SocialMedia/SocialMedia";
 import logo from "../../image/logo.jpg";
+import { toggle } from "../../features/live/liveSlices";
 
 const Header = () => {
   const stateLive = useSelector((state) => state.live);
 
+  const dispatch = useDispatch();
+  const sidebarToggle = (state) => dispatch(toggle(state));
+
   return (
     <HeaderContainer>
-      <HeaderPrincipalElemment>
+      <HeaderPrincipalElemment active={stateLive.state}>
         <div>
           <div>
             <Logo src={logo} alt="logo" />
           </div>
-          {stateLive.state && (
-            <ButtonLive href="https://www.twitch.tv/jonhyphenom">
-              LIVE <LiveIcon />
-            </ButtonLive>
-          )}
-          <SocialMediaButton icon={<GiHamburgerMenu />} />
+          <SocialMediaButton
+            icon={<GiHamburgerMenu />}
+            action={() => sidebarToggle(true)}
+          />
         </div>
         <SocialMediaContainer>
           <SocialMedia

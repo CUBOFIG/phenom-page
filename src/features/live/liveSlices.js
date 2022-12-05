@@ -2,6 +2,7 @@ const { createSlice } = require("@reduxjs/toolkit");
 
 const initialStatejf = {
   state: false,
+  isOpen: false,
 };
 
 export const liveSlice = createSlice({
@@ -11,9 +12,12 @@ export const liveSlice = createSlice({
     changeState: (state, action) => {
       return { ...state, state: action.payload };
     },
+    toggle: (state, action) => {
+      return { ...state, isOpen: action.payload };
+    },
   },
 });
 
-export const { changeState } = liveSlice.actions;
+export const { changeState, toggle } = liveSlice.actions;
 
 export default liveSlice.reducer;

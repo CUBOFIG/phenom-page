@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
 const live = keyframes`
   0% {
@@ -26,39 +26,47 @@ export const HeaderPrincipalElemment = styled.div`
   z-index: 1;
   width: 100%;
 
-  & > div:nth-child(1) {
+  & div:nth-child(1) {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
+    & > div {
+      border-radius: 50%;
+      margin: 0 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      height: 50px;
+
+      &:before {
+        ${({ active }) =>
+          active &&
+          css`
+            content: "";
+            border: 1px solid red;
+            position: absolute;
+            background-color: rgba(255, 0, 0, 0.6);
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            animation: ${live} 3s ease-in-out infinite;
+            z-index: -1;
+          `}
+      }
+    }
+
     & > button {
       margin: 0;
+
+      @media screen and (min-width: 425px) {
+        display: none;
+      }
     }
   }
 
-  & > div:nth-child(1) > div {
-    border-radius: 50%;
-    margin: 0 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    height: 50px;
-
-    &:before {
-      content: "";
-      border: 1px solid red;
-      position: absolute;
-      background-color: rgba(255, 0, 0, 0.6);
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      animation: ${live} 3s ease-in-out infinite;
-      z-index: -1;
-    }
-  }
-
-  @media screen and (min-width: 375px) {
+  @media screen and (min-width: 425px) {
     flex-direction: row;
     width: 100%;
     height: 80px;
