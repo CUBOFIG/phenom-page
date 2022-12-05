@@ -2,14 +2,15 @@ import {
   TwitchContainer,
   TwitchPlayerContainer,
   TwitchChatContainer,
+  TwitchPlayer,
   TwitchChat,
 } from "./Hero.elements";
-//import { useState } from "react";
+import { useState } from "react";
 //import { changeState } from "../../features/live/liveSlices";
 //import { useDispatch } from "react-redux";
 
 const Hero = () => {
-  //const [online, setOnline] = useState(true);
+  const [online, setOnline] = useState(true);
 
   // const dispatch = useDispatch();
 
@@ -25,20 +26,20 @@ const Hero = () => {
         </TwitchChatContainer>
 
         <TwitchPlayerContainer>
-          {/* <TwitchPlayer
+          <TwitchPlayer
             {...(online ? { channel: "jonhyphenom" } : { video: "1668088830" })}
             className="twitch-player"
             parent={["localhost"]}
             hideControls={false}
             width={1000}
             onOnline={() => {
-              changeCurrenState(true);
+              //changeCurrenState(true);
             }}
             onOffline={() => {
               setOnline(false);
-              changeCurrenState(false);
+              //changeCurrenState(false);
             }}
-          /> */}
+          />
         </TwitchPlayerContainer>
       </div>
     </TwitchContainer>
