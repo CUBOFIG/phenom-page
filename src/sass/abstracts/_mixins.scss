@@ -1,0 +1,13 @@
+$breakpoint-tablet: 425px;
+
+@mixin desktop {
+  @media only screen and (min-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin centerElement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

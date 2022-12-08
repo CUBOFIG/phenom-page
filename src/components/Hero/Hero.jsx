@@ -8,6 +8,7 @@ import {
 import { useState } from "react";
 import { changeState } from "../../features/live/liveSlices";
 import { useDispatch } from "react-redux";
+import StatusCard from "components/Cards/StatusCard/StatusCard";
 
 const Hero = () => {
   const [online, setOnline] = useState(true);
@@ -22,7 +23,8 @@ const Hero = () => {
     <TwitchContainer className="flex">
       <div>
         <TwitchChatContainer>
-          <TwitchChat channel="jonhyphenom" darkMode />
+          <StatusCard />
+          {/* <TwitchChat channel="jonhyphenom" darkMode /> */}
         </TwitchChatContainer>
 
         <TwitchPlayerContainer>

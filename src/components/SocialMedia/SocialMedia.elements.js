@@ -1,9 +1,10 @@
 import styled from "styled-components";
+import colors from "styles/color";
 
 export const SocialMediaElement = styled.a`
-  color: #858c69;
+  color: ${colors.icon};
   margin: 0 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 
   &:hover {
     color: #f2a488;
@@ -11,7 +12,7 @@ export const SocialMediaElement = styled.a`
 `;
 
 export const SocialMediaButton = styled.button`
-  color: #858c69;
+  color: ${colors.icon};
   margin: 0 1.5rem;
   font-size: 1.2rem;
   border: 0;

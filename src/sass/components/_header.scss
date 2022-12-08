@@ -1,0 +1,47 @@
+.header {
+  @include centerElement;
+  background-color: $primary-color;
+  box-shadow: inset -8px -8px 8px 0 $shadow-color, inset 8px 8px 8px 0 $shadow-color;
+  width: 100%;
+  z-index: 999;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 20px;
+    width: 100%;
+    z-index: 1;
+
+    @include desktop {
+      flex-direction: row;
+      height: 80px;
+      justify-content: space-between;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1400px;
+      width: 100%;
+    }
+
+    &-social{
+      display: none;
+
+      @include desktop {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin-left: auto;
+        margin: 1rem 0;
+      }
+    }
+  }
+
+  .logos-container {
+
+  }
+
+  .logo { 
+    height: 100%;
+    border-radius: 50%;
+  }
+
+}

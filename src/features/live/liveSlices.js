@@ -1,9 +1,22 @@
-const { createSlice } = require("@reduxjs/toolkit");
+const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
 
 const initialStatejf = {
   state: false,
   isOpen: false,
+  dataLive: {},
+  isLoading: true,
+  currentStatus: false,
 };
+
+const url = "https://api-phenomenal-production.up.railway.app/";
+//https://api-phenomenal-production.up.railway.app/
+
+export const getDataLive = createAsyncThunk("cart/getDataLive", () => {
+  return fetch(url)
+    .then((res) => res.json())
+    .then((data) => data)
+    .catch((err) => console.log(err));
+});
 
 export const liveSlice = createSlice({
   name: "live",
@@ -14,6 +27,19 @@ export const liveSlice = createSlice({
     },
     toggle: (state, action) => {
       return { ...state, isOpen: action.payload };
+    },
+  },
+  extraReducers: {
+    [getDataLive.pending]: (state) => {
+      state.isLoading = true;
+    },
+    [getDataLive.fulfilled]: (state, action) => {
+      state.isLoading = false;
+      state.dataLive = action.payload;
+      state.currentStatus = action.payload?.status === "live" ? true : false;
+    },
+    [getDataLive.rejected]: (state) => {
+      state.isLoading = false;
     },
   },
 });

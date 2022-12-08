@@ -6,6 +6,8 @@ import {
   BackSidebar,
 } from "./Sidebar.elements";
 import { toggle } from "../../features/live/liveSlices";
+import { BsTwitter, BsInstagram, BsTwitch } from "react-icons/bs";
+import { SocialMedia } from "components/SocialMedia/SocialMedia";
 
 const Sidebar = () => {
   const stateLive = useSelector((state) => state.live);
@@ -16,7 +18,22 @@ const Sidebar = () => {
   return (
     <SidebarContainer click={stateLive.isOpen}>
       <div>
-        <SidebarWrapper>sidebar</SidebarWrapper>
+        <SidebarWrapper>
+          <div>
+            <SocialMedia
+              icon={<BsTwitter />}
+              href="https://twitter.com/jonhyphenom"
+            />
+            <SocialMedia
+              icon={<BsInstagram />}
+              href="https://twitter.com/jonhyphenom"
+            />
+            <SocialMedia
+              icon={<BsTwitch />}
+              href="https://twitter.com/jonhyphenom"
+            />
+          </div>
+        </SidebarWrapper>
       </div>
       {stateLive.isOpen && <BackSidebar onClick={() => sidebarToggle(false)} />}
     </SidebarContainer>

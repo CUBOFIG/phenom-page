@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const LayoutContainer = styled.div`
-  background-color: #33402a;
   color: white;
   height: 100vh;
   margin: 0;

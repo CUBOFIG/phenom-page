@@ -21,9 +21,15 @@ export const TwitchContainer = styled.div`
       flex-direction: row;
       margin: 2rem;
       display: flex;
-      max-width: 1800px;
+      max-width: 1400px;
       justify-content: center;
+
+      align-items: center;
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 90.5vh;
   }
 `;
 

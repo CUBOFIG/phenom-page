@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const SidebarContainer = styled.div`
-  overflow: hidden;
+  overflow-y: hidden;
+  display: flex;
 
   & > div:nth-child(1) {
     display: flex;
@@ -13,7 +14,7 @@ export const SidebarContainer = styled.div`
     z-index: 1000;
     transition: all 0.5s ease;
     left: ${({ click }) => (click ? 0 : "-100%")};
-    background-color: black;
+    background-color: #858c69;
   }
 `;
 
@@ -25,7 +26,7 @@ export const SidebarWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 3.5rem;
+  margin-top: auto;
 
   & ul {
     padding: 0;
@@ -34,6 +35,17 @@ export const SidebarWrapper = styled.div`
   & li {
     margin-top: 2.2rem;
     list-style: none;
+  }
+
+  & > div {
+    display: flex;
+    background-color: #73473d;
+    justify-content: center;
+
+    & > a {
+      margin: 1rem;
+      color: #f2a488;
+    }
   }
 `;
 
