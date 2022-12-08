@@ -22,7 +22,7 @@ const Header = () => {
 
   useEffect(() => {
     dispatch(getDataLive());
-  }, []);
+  }, [dispatch]);
 
   return (
     <header className="header">

@@ -3,7 +3,6 @@ import {
   TwitchPlayerContainer,
   TwitchChatContainer,
   TwitchPlayer,
-  TwitchChat,
 } from "./Hero.elements";
 import { useState } from "react";
 import { changeState } from "../../features/live/liveSlices";
