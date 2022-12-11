@@ -1,24 +1,27 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
-  SidebarContainer,
   SidebarWrapper,
   BackSidebar,
 } from "./Sidebar.elements";
 import { toggle } from "../../features/live/liveSlices";
 import { BsTwitter, BsInstagram, BsTwitch } from "react-icons/bs";
 import { SocialMedia } from "components/SocialMedia/SocialMedia";
+import classNames from "classnames";
 
 const Sidebar = () => {
   const stateLive = useSelector((state) => state.live);
-
   const dispatch = useDispatch();
   const sidebarToggle = (state) => dispatch(toggle(state));
 
+  const toggleSidebar = classNames({
+    "sidebar__hidden": stateLive.isOpen
+  })
+
   return (
-    <SidebarContainer click={stateLive.isOpen}>
-      <div>
-        <SidebarWrapper>
+    <div className="sidebar">
+      <div className={toggleSidebar}>
+        <SidebarWrapper className="sidebar__wrapper">
           <div>
             <SocialMedia
               icon={<BsTwitter />}
@@ -36,7 +39,7 @@ const Sidebar = () => {
         </SidebarWrapper>
       </div>
       {stateLive.isOpen && <BackSidebar onClick={() => sidebarToggle(false)} />}
-    </SidebarContainer>
+    </div>
   );
 };
 

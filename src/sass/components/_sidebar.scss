@@ -1,0 +1,48 @@
+.sidebar {
+  overflow-y: hidden;
+  display: flex;
+
+  & > div:nth-child(1) {
+    background-color: $primary-color;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    opacity: 1;
+    position: absolute;
+    transition: all 0.5s ease;
+    width: 70%;
+    z-index: 1000;
+    left: -100%;
+  }
+
+  .sidebar__hidden {
+    left: 0 !important;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: auto;
+
+    & ul {
+      padding: 0;
+    }
+
+    & li {
+      margin-top: 2.2rem;
+      list-style: none;
+    }
+
+    & > div {
+      display: flex;
+      background-color: #73473d;
+      justify-content: center;
+
+      & > a {
+        margin: 1rem;
+        color: $secondary-color;
+      }
+    }
+  }
+}

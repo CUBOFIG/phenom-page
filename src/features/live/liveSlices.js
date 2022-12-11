@@ -36,7 +36,7 @@ export const liveSlice = createSlice({
     [getDataLive.fulfilled]: (state, action) => {
       state.isLoading = false;
       state.dataLive = action.payload;
-      state.currentStatus = action.payload?.status === "live" ? true : false;
+      state.currentStatus = action.payload?.state === "online" ? true : false;
     },
     [getDataLive.rejected]: (state) => {
       state.isLoading = false;

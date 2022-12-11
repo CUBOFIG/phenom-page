@@ -1,18 +1,21 @@
 import { useEffect } from "react";
-import { HeaderPrincipalElemment } from "./Header.elements";
 import { useSelector, useDispatch } from "react-redux";
 import { BsTwitter, BsInstagram, BsTwitch } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { SocialMedia, SocialMediaButton } from "../SocialMedia/SocialMedia";
 import logo from "../../image/logo.jpg";
 import { toggle } from "../../features/live/liveSlices";
-import { getDataLive } from "features/live/liveSlices";
+import { getDataLive } from "features/live/liveSlices"; 
+import classNames from "classnames"
 
 const Header = () => {
   const stateLive = useSelector((state) => state.live);
-
   const dispatch = useDispatch();
   const sidebarToggle = (state) => dispatch(toggle(state));
+
+  const statusAnimation = classNames("logo-container", {
+    "logo-container__animation": stateLive.currentStatus,
+  });
 
   useEffect(() => {
     stateLive.isOpen
@@ -26,12 +29,9 @@ const Header = () => {
 
   return (
     <header className="header">
-      <HeaderPrincipalElemment
-        active={stateLive.currentStatus}
-        className="header__container"
-      >
+      <div className="header__container" >
         <div className="header__container-main">
-          <div className="logos-container">
+          <div className={`logo-container ${statusAnimation}`}>
             <img src={logo} alt="logo" className="logo" />
           </div>
           <SocialMediaButton
@@ -53,7 +53,7 @@ const Header = () => {
             href="https://twitter.com/jonhyphenom"
           />
         </div>
-      </HeaderPrincipalElemment>
+      </div>
     </header>
   );
 };
