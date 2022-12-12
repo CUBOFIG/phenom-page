@@ -5,7 +5,8 @@ import jonhy from "../../image/jonhy.png";
 export const TwitchContainer = styled.div`
   background-image: url(${jonhy});
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: 200% 100%;
+  background-position: top;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,11 +37,15 @@ export const TwitchContainer = styled.div`
 export const TwitchPlayerContainer = styled.div`
   height: 550px !important;
   width: 100%;
-  background-color: black;
+  background-color: transparent;
 
   @media screen and (min-width: 768px) {
     margin-left: 2rem;
     width: 1000px;
+  }
+
+  & > div {
+    padding: 2rem 20px;
   }
 `;
 
@@ -54,9 +59,9 @@ export const TwitchPlayer = styled(Player)`
 `;
 
 export const TwitchChatContainer = styled.div`
-  background-color: black;
-  margin-top: 2rem;
-  height: 550px !important;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 20px;
 
   @media screen and (min-width: 768px) {
     margin: 0;

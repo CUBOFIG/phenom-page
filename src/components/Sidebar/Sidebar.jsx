@@ -10,12 +10,19 @@ const Sidebar = () => {
   const sidebarToggle = (state) => dispatch(toggle(state));
 
   const toggleSidebar = classNames({
-    "sidebar__hidden": stateLive.isOpen
-  })
+    sidebar__hidden: stateLive.isOpen,
+  });
 
   return (
     <div className="sidebar">
       <div className={toggleSidebar}>
+        <div className="sidebar__options">
+          <ul>
+            <li>Sorteo</li>
+            <li>PC</li>
+            <li>Proximamente</li>
+          </ul>
+        </div>
         <div className="sidebar__wrapper">
           <div>
             <SocialMedia
@@ -33,7 +40,12 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      {stateLive.isOpen && <div className="sidebar__background" onClick={() => sidebarToggle(false)} />}
+      {stateLive.isOpen && (
+        <div
+          className="sidebar__background"
+          onClick={() => sidebarToggle(false)}
+        />
+      )}
     </div>
   );
 };

@@ -6,11 +6,13 @@ import {
 } from "./Hero.elements";
 import { useState } from "react";
 import { changeState } from "../../features/live/liveSlices";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import StatusCard from "components/Cards/StatusCard/StatusCard";
+import { memo } from "react";
 
 const Hero = () => {
-  const [online, setOnline] = useState(true);
+  const stateLive = useSelector((state) => state.live.state);
+  const [online, setOnline] = useState(!stateLive);
 
   const dispatch = useDispatch();
 
@@ -23,28 +25,30 @@ const Hero = () => {
       <div>
         <TwitchChatContainer>
           <StatusCard />
-          {/* <TwitchChat channel="jonhyphenom" darkMode /> */}
         </TwitchChatContainer>
 
         <TwitchPlayerContainer>
-          <TwitchPlayer
-            {...(online ? { channel: "jonhyphenom" } : { video: "1668088830" })}
-            className="twitch-player"
-            parent={["localhost"]}
-            hideControls={false}
-            width={1000}
-            onOnline={() => {
-              changeCurrenState(true);
-            }}
-            onOffline={() => {
-              setOnline(false);
-              changeCurrenState(false);
-            }}
-          />
+          <div>
+            <TwitchPlayer
+              {...(online
+                ? { channel: "gelisgelita" }
+                : { video: "1668088830" })}
+              className="twitch-player"
+              parent={["localhost"]}
+              hideControls={false}
+              onOnline={() => {
+                //changeCurrenState(true);
+              }}
+              onOffline={() => {
+                setOnline(false);
+                changeCurrenState(false);
+              }}
+            />
+          </div>
         </TwitchPlayerContainer>
       </div>
     </TwitchContainer>
   );
 };
 
-export default Hero;
+export default memo(Hero);

@@ -5,11 +5,7 @@ const StatusCard = () => {
   const stateLive = useSelector((state) => state.live);
 
   const CurrentState = () => {
-    return stateLive.currentStatus ? (
-      <h1>Jonhy esta en directo</h1>
-    ) : (
-      <h1>Jonhy no esta en directo</h1>
-    );
+    return stateLive.currentStatus ? <h1>EN VIVO</h1> : <h1>SIN CONEXIÓN</h1>;
   };
 
   return (
