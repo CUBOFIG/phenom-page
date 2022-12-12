@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../components/Header/Header";
 import { LayoutContainer, LayoutChildren } from "./Layout.element";
 import { Outlet } from "react-router-dom";

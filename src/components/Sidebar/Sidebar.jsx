@@ -1,10 +1,5 @@
-import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  SidebarWrapper,
-  BackSidebar,
-} from "./Sidebar.elements";
-import { toggle } from "../../features/live/liveSlices";
+import { toggle } from "features/live/liveSlices";
 import { BsTwitter, BsInstagram, BsTwitch } from "react-icons/bs";
 import { SocialMedia } from "components/SocialMedia/SocialMedia";
 import classNames from "classnames";
@@ -21,7 +16,7 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className={toggleSidebar}>
-        <SidebarWrapper className="sidebar__wrapper">
+        <div className="sidebar__wrapper">
           <div>
             <SocialMedia
               icon={<BsTwitter />}
@@ -36,9 +31,9 @@ const Sidebar = () => {
               href="https://twitter.com/jonhyphenom"
             />
           </div>
-        </SidebarWrapper>
+        </div>
       </div>
-      {stateLive.isOpen && <BackSidebar onClick={() => sidebarToggle(false)} />}
+      {stateLive.isOpen && <div className="sidebar__background" onClick={() => sidebarToggle(false)} />}
     </div>
   );
 };

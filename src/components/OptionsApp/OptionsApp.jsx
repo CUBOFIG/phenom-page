@@ -1,4 +1,3 @@
-import React from "react";
 import { OptionsContainer } from "./OptionsApp.elements";
 import Card from "../Cards/Card";
 

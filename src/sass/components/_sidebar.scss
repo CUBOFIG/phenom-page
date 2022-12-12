@@ -19,6 +19,17 @@
     left: 0 !important;
   }
 
+  &__background {
+    background-color: $dark;
+    overflow: hidden;
+    height: 120%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -36,7 +47,7 @@
 
     & > div {
       display: flex;
-      background-color: #73473d;
+      background-color: $brown;
       justify-content: center;
 
       & > a {

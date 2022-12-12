@@ -1,4 +1,3 @@
-import React from "react";
 
 const LoadingContainer = ({ children, loading }) => {
   return loading ? (
