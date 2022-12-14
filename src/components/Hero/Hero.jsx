@@ -1,14 +1,9 @@
-import {
-  TwitchContainer,
-  TwitchPlayerContainer,
-  TwitchChatContainer,
-  TwitchPlayer,
-} from "./Hero.elements";
-import { useState } from "react";
 import { changeState } from "../../features/live/liveSlices";
-import { useDispatch, useSelector } from "react-redux";
-import StatusCard from "components/Cards/StatusCard/StatusCard";
 import { memo } from "react";
+import { TwitchPlayer as Player } from "react-twitch-embed";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import StatusCard from "components/Cards/StatusCard/StatusCard";
 
 const Hero = () => {
   const stateLive = useSelector((state) => state.live.state);
@@ -21,17 +16,17 @@ const Hero = () => {
   };
 
   return (
-    <TwitchContainer className="flex">
+    <section className="flex hero">
       <div>
-        <TwitchChatContainer>
+        <div className="hero__container-card">
           <StatusCard />
-        </TwitchChatContainer>
+        </div>
 
-        <TwitchPlayerContainer>
+        <div className="hero__container-stream">
           <div>
-            <TwitchPlayer
+            <Player
               {...(online
-                ? { channel: "gelisgelita" }
+                ? { channel: "jonhyphenom" }
                 : { video: "1668088830" })}
               className="twitch-player"
               parent={["localhost"]}
@@ -45,9 +40,9 @@ const Hero = () => {
               }}
             />
           </div>
-        </TwitchPlayerContainer>
+        </div>
       </div>
-    </TwitchContainer>
+    </section>
   );
 };
 

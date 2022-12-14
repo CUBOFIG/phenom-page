@@ -1,10 +1,102 @@
 .status-card{
-  background-color: $dark;
+  background-color: $dark-card;
   height: 100%;
   width: 100%;
   color: $primary-color;
+  display: flex;
+  align-items: center;
+  border-radius: 0.6rem;
 
-  h1{ 
+  & > div > div{
+    padding: 1rem
+  }
+
+  & > div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  h2 { 
+    padding: 0.25rem;
     margin: 0;
+    background-color: $primary-color;
+    animation: live-text 5s infinite;
+  }
+
+  h5 { 
+    font-size: 1rem;
+    margin: 0;
+
+    @include desktop {
+      font-size: 2rem;
+    }
+  }
+
+  a {
+    font-size: 0.9rem;
+    color: $twitch;
+    font-weight: 100;
+    margin-right: 1rem;
+    margin-left: auto;
+    text-decoration: none;
+    margin-bottom: 1rem;
+  }
+
+  h1 { 
+    font-size: 2rem;
+    animation: color-change 2s infinite;
+  }
+
+  @include desktop {  
+    margin: 2rem 20px;
+    height: auto;
+    align-items: flex-start;
+    border-radius: 0;
+  }
+}
+
+@keyframes live-text {
+  0%{
+    color:#9b0000;
+  }
+  
+  33%{
+    color:#be0d00;
+  }
+  
+  66%{
+    color:#ff0404;
+  }
+
+  100%{
+    color:#be0d00;
+  }
+}
+
+@keyframes color-change {
+  0%{
+    color:#A0D468;
+  }
+  
+  20%{
+    color:#4FC1E9;
+  }
+  
+  40%{
+    color:#FFCE54;
+  }
+  
+  60%{
+    color:#FC6E51;
+  }
+  
+  80%{
+    color:#ED5565;
+  }
+  
+  100%{
+    color:#AC92EC;
   }
 }

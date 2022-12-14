@@ -5,9 +5,9 @@ const OptionsApp = () => {
   return (
     <OptionsContainer>
       <div>
-        <Card title="Sorteo" />
-        <Card title="PC" />
-        <Card title="No Tocar..." />
+        <Card title="" />
+        <Card title="" />
+        <Card title="" />
       </div>
     </OptionsContainer>
   );

@@ -40,8 +40,6 @@
       padding: 0;
       margin-left: 2rem;
       font-weight: 700;
-      color: $secondary-color;
-
     }
 
     & li {
@@ -52,6 +50,14 @@
 
       &:hover {
         color: $details-color;
+      }
+
+      & > a {
+        color: $secondary-color;
+        text-decoration: none;
+        &:hover {
+          color: $details-color;
+        }
       }
     }
 

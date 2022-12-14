@@ -3,6 +3,7 @@ import { toggle } from "features/live/liveSlices";
 import { BsTwitter, BsInstagram, BsTwitch } from "react-icons/bs";
 import { SocialMedia } from "components/SocialMedia/SocialMedia";
 import classNames from "classnames";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const stateLive = useSelector((state) => state.live);
@@ -18,9 +19,15 @@ const Sidebar = () => {
       <div className={toggleSidebar}>
         <div className="sidebar__options">
           <ul>
-            <li>Sorteo</li>
-            <li>PC</li>
-            <li>Proximamente</li>
+            <li>
+              <Link to="giveaways">Sorteo</Link>
+            </li>
+            <li>
+              <Link to="pc-specs">PC</Link>
+            </li>
+            <li>
+              <Link to="surprise">Proximamente</Link>
+            </li>
           </ul>
         </div>
         <div className="sidebar__wrapper">
