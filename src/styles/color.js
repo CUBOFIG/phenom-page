@@ -5,7 +5,7 @@ const colors = {
   font: "#f2a488",
 
   //icons
-  icon: "#858C69",
+  icon: "#FF8847",
   hover: "#f2a488",
 
   // Colors for the logo alarm

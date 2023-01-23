@@ -1,20 +1,16 @@
-import {
-  SocialMediaElement,
-  SocialMediaButton as SocialButton,
-} from "./SocialMedia.elements";
 
 export const SocialMedia = ({ icon, href }) => {
   return (
-    <SocialMediaElement className="a" icon={icon} href={href}>
+    <a className="social__media-anchor" icon={icon} href={href}>
       {icon}
-    </SocialMediaElement>
+    </a>
   );
 };
 
 export const SocialMediaButton = ({ icon, action }) => {
   return (
-    <SocialButton className="a" onClick={action}>
+    <button className="social__media-button" onClick={action}>
       {icon}
-    </SocialButton>
+    </button>
   );
 };

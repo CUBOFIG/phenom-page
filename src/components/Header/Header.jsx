@@ -1,12 +1,12 @@
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import { BsTwitter, BsInstagram, BsTwitch } from "react-icons/bs";
+import { getDataLive } from "features/live/liveSlices"; 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { SocialMedia, SocialMediaButton } from "../SocialMedia/SocialMedia";
-import logo from "../../image/logo.jpg";
 import { toggle } from "../../features/live/liveSlices";
-import { getDataLive } from "features/live/liveSlices"; 
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import classNames from "classnames"
+import logo from "image/logo.webp";
 
 const Header = () => {
   const stateLive = useSelector((state) => state.live);

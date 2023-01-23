@@ -11,7 +11,7 @@ export const OptionsContainer = styled.div`
     ${centerBlock}
     justify-content: space-between;
     max-width: 1400px;
-    padding: 0 20px;
+    padding: 1rem 1.8rem;
     flex-direction: column;
 
     @media screen and (min-width: 700px) {

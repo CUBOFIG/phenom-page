@@ -1,5 +1,5 @@
 .hero { 
-  background-image: url("../../image/jonhy.png");
+  background-image: url("../../image/jonhy.webp");
   background-repeat: no-repeat;
   background-size: 200% 100%;
   background-position: top;
@@ -10,6 +10,7 @@
   height: 100%;
 
   & > div {
+    padding: 1rem 1.4rem;
     width: 100% !important;
     display: flex;
     flex-direction: column-reverse;
@@ -26,7 +27,6 @@
   &__container-card {
     display: flex;
     justify-content: center;
-    padding: 0rem 20px 1rem 20px;
   
     @include desktop {
       margin: 0;

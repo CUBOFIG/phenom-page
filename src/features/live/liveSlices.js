@@ -8,8 +8,7 @@ const initialStatejf = {
   currentStatus: false,
 };
 
-const url = "https://api-phenomenal-production.up.railway.app/";
-//https://api-phenomenal-production.up.railway.app/
+const url = "https://deno-phenom.deno.dev/";
 
 export const getDataLive = createAsyncThunk("cart/getDataLive", () => {
   return fetch(url)

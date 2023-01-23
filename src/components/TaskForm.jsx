@@ -27,19 +27,6 @@ const TaskForm = () => {
 
   return (
     <div>
-      {/* <form onSubmit={submitTask}> */}
-      {/* <input
-        name="title"
-        type="text"
-        placeholder="title"
-        onChange={handleChange}
-      />
-      <textarea
-        name="description"
-        placeholder="description"
-        onChange={handleChange}
-      />
-      <button type="submit">save</button> */}
       <Hero />
       <div>
         <h1>sorteo</h1>

@@ -1,19 +1,18 @@
 import styled from "styled-components";
 import colors from "styles/color";
-import logo from "../../image/logo.jpg";
-import construction from "../../image/construction.png";
+import logo from "../../image/logo.webp";
+import construction from "../../image/construction.webp";
 
 export const Card = styled.div`
-  border-radius: 0.9rem;
   background-color: ${colors.primary};
-  //border: 5px solid ${colors.icon};
-  width: 290px;
+  background-image: url(${construction}), url(${logo});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0.9rem;
   height: 250px;
   margin: 1rem;
-  background-image: url(${construction}), url(${logo});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  width: 290px;
 
   @media screen and (min-width: 700px) {
     margin: 2rem;
