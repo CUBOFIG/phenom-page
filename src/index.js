@@ -1,19 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "sass/main.scss";
-import GlobalStyle from "./globalStyles";
-import { store } from "./app/store";
-import { Provider } from "react-redux";
 import { RouterProvider } from "react-router-dom";
 import router from "./router/Router";
+import { QueryClientProvider } from "@tanstack/react-query";
+import queryClient from "queryClient";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <GlobalStyle />
+    <QueryClientProvider client={queryClient}>
       <RouterProvider router={router} />
-    </Provider>
+    </QueryClientProvider>
   </React.StrictMode>
 );

@@ -1,17 +1,14 @@
-import { useSelector, useDispatch } from "react-redux";
-import { toggle } from "features/live/liveSlices";
 import { BsTwitter, BsInstagram, BsTwitch } from "react-icons/bs";
 import { SocialMedia } from "components/SocialMedia/SocialMedia";
 import classNames from "classnames";
 import { Link } from "react-router-dom";
+import { globalStore } from "store/stateGlobal"
 
 const Sidebar = () => {
-  const stateLive = useSelector((state) => state.live);
-  const dispatch = useDispatch();
-  const sidebarToggle = (state) => dispatch(toggle(state));
+  const { onSidebarToggle, isOpenSidebar } = globalStore()
 
   const toggleSidebar = classNames({
-    sidebar__hidden: stateLive.isOpen,
+    sidebar__hidden: isOpenSidebar,
   });
 
   return (
@@ -47,10 +44,10 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      {stateLive.isOpen && (
+      {toggleSidebar && (
         <div
           className="sidebar__background"
-          onClick={() => sidebarToggle(false)}
+          onClick={() => onSidebarToggle(false)}
         />
       )}
     </div>

@@ -1,31 +1,23 @@
 import { BsTwitter, BsInstagram, BsTwitch } from "react-icons/bs";
-import { getDataLive } from "features/live/liveSlices"; 
 import { GiHamburgerMenu } from "react-icons/gi";
 import { SocialMedia, SocialMediaButton } from "../SocialMedia/SocialMedia";
-import { toggle } from "../../features/live/liveSlices";
 import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
 import classNames from "classnames"
 import logo from "image/logo.webp";
+import { globalStore } from "store/stateGlobal"
 
 const Header = () => {
-  const stateLive = useSelector((state) => state.live);
-  const dispatch = useDispatch();
-  const sidebarToggle = (state) => dispatch(toggle(state));
+  const { onSidebarToggle, statusLive, isOpenSidebar } = globalStore()
 
   const statusAnimation = classNames("logo-container", {
-    "logo-container__animation": stateLive.currentStatus,
+    "logo-container__animation": statusLive,
   });
 
   useEffect(() => {
-    stateLive.isOpen
+    isOpenSidebar
       ? (document.body.style.overflowY = "hidden")
       : (document.body.style.overflowY = "scroll");
-  }, [stateLive.isOpen]);
-
-  useEffect(() => {
-    dispatch(getDataLive());
-  }, [dispatch]);
+  }, [isOpenSidebar]);
 
   return (
     <header className="header">
@@ -36,7 +28,7 @@ const Header = () => {
           </div>
           <SocialMediaButton
             icon={<GiHamburgerMenu />}
-            action={() => sidebarToggle(true)}
+            action={() => onSidebarToggle(true)}
           />
         </div>
         <div className="header__container-social">

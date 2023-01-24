@@ -1,52 +1,46 @@
-//import { changeState } from "../../features/live/liveSlices";
+/* eslint-disable react-hooks/exhaustive-deps */
 import { memo } from "react";
-// import { TwitchPlayer as Player } from "react-twitch-embed";
-// import { useDispatch, useSelector } from "react-redux";
-// import { useState } from "react";
+import { TwitchPlayer as Player } from "react-twitch-embed";
+import { globalStore } from "store/stateGlobal"
 import StatusCard from "components/Cards/StatusCard/StatusCard";
+import { useFetchStatus } from "hooks/useOnLive";
+import { useEffect, useCallback } from "react";
 
 const Hero = () => {
-  //const stateLive = useSelector((state) => state.live.state);
-  // const [online, setOnline] = useState(!stateLive);
+  const { data, isLoading } = useFetchStatus();
 
-  // const dispatch = useDispatch();
+  const statusLive = globalStore(useCallback((state) => state.statusLive, []))
+  const setData = globalStore(useCallback((state) => state.setData, [])) 
 
-  // const changeCurrenState = (state) => {
-  //   dispatch(changeState(state));
-  // };
-
+  useEffect(()=>{
+    console.log("uwuwuwuw")
+    if(!isLoading) setData({...data, status: "onlive"})
+  },[isLoading])
+  
   return (
     <section className="flex hero">
       <div>
         <div className="hero__container-card">
           <StatusCard />
         </div>
-        {/* <div className="hero__container-stream">
-          <div>
-            { !online 
-              ? <Player
-                  channel="jonhyphenom" 
-                  className="twitch-player"
-                  parent={["localhost"]}
-                  hideControls={false}
-                  onOffline={() => {
-                    setOnline(false);
-                    changeCurrenState(false);
-                  }}
-                />
-              : <Player
-                  video="1668088830"
-                  className="twitch-player"
-                  parent={["localhost"]}
-                  hideControls={false}
-                  onOffline={() => {
-                    setOnline(false);
-                    changeCurrenState(false);
-                  }}
-                />
-            }
-          </div>
-        </div> */}
+          <div className="hero__container-stream">
+            <div>
+              { statusLive
+                ? <Player
+                    channel="jonhyphenom" 
+                    className="twitch-player"
+                    parent={["localhost"]}
+                    hideControls={false}
+                  />
+                : <Player
+                    video="1668088830"
+                    className="twitch-player"
+                    parent={["localhost"]}
+                    hideControls={false}
+                  />
+              }
+            </div>
+        </div> 
       </div>
     </section>
   );
